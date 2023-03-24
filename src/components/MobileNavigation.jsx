@@ -9,7 +9,7 @@ import InitialsNavItem from './InitialsNavItem';
 import { scrollToSection } from '../utils/common';
 import projectsData from '../api/db';
 
-export default function MobileHeader({ links }) {
+export default function MobileNavigation({ navItems }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -30,14 +30,14 @@ export default function MobileHeader({ links }) {
         onClose={() => setIsMobileNavOpen(false)}
         anchor='top'
       >
-        {links.map((link) => (
+        {navItems.map((item) => (
           <NavItem
-            key={link.key}
-            href={link.href}
-            title={link.title}
-            download={link.key === 'resume' && true}
+            key={item.key}
+            href={item.href}
+            title={item.title}
+            download={item.key === 'resume' && true}
             classes={'my-4 text-center'}
-            children={link.children}
+            children={item.children}
           />
         ))}
       </Drawer>

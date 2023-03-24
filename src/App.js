@@ -1,16 +1,16 @@
 import { Container } from '@mui/material';
 import React from 'react';
 import Footer from './components/Footer';
-import Navigation from './components/Navigation';
 import Router from './router/router';
 import { createTheme, ThemeProvider } from '@mui/material';
 import theme from './theme/theme';
+import Header from './components/Header';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth={'md'}>
-        <Navigation />
+        <Header />
         <Router />
         <Footer />
       </Container>

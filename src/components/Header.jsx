@@ -3,10 +3,10 @@ import { AppBar, Toolbar, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import resume from '../static/Tsvetomira-Hristova-CV.pdf';
 import projectsData from '../api/db';
-import MobileHeader from './MobileHeader';
-import DesktopHeader from './DesktopHeader';
+import MobileNavigation from './MobileNavigation';
+import DesktopNavigation from './DesktopNavigation';
 
-const links = [
+const navItems = [
   { key: 'home', title: 'Home', href: '/' },
   { key: 'about-me', title: 'About Me', href: '/about-me' },
   {
@@ -24,7 +24,7 @@ const links = [
   },
 ];
 
-export default function Navigation() {
+export default function Header() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -33,9 +33,9 @@ export default function Navigation() {
     <AppBar position='sticky' elevation={0}>
       <Toolbar className='bg-white shadow-none flex justify-between'>
         {isMobile ? (
-          <MobileHeader links={links} />
+          <MobileNavigation navItems={navItems} />
         ) : (
-          <DesktopHeader links={links} />
+          <DesktopNavigation navItems={navItems} />
         )}
       </Toolbar>
     </AppBar>
