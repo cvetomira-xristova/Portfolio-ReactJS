@@ -3,9 +3,7 @@ import React from 'react';
 import { scrollToSection } from '../utils/common';
 import ProjectItem from '../components/ProjectItem';
 
-import imageSrc1 from '../static/project1-img.png';
-import imageSrc2 from '../static/project2-img2.png';
-import imageSrc3 from '../static/project3-img.png';
+import projectsData from '../api/db';
 
 export default function LandingPage() {
   return (
@@ -31,35 +29,23 @@ export default function LandingPage() {
 
       {/* TODO: Fix Fonts */}
 
-      <div id='projects-section' className='bg-gray-100 pt-20 '>
+      <div id='projects-section' className='bg-gray-100 pt-20'>
         <Typography
           variant='subtitle1'
-          //  className='uppercase'
           className='pb-4'
+          //  className='uppercase'
         >
           My Recent Work
         </Typography>
-        <ProjectItem
-          imageSrc={imageSrc1}
-          name={'Project Name'}
-          description={'This is a short decription of the project hihi'}
-          bgColor={'#E6D9EA'}
-          href={'project-name'}
-        />
-        <ProjectItem
-          imageSrc={imageSrc2}
-          name={'Project Name'}
-          description={'This is a short decription of the project hihi'}
-          bgColor={'#FFCBC0'}
-          href={'project-name2'}
-        />
-        <ProjectItem
-          imageSrc={imageSrc3}
-          name={'Project Name'}
-          description={'This is a short decription of the project hihi'}
-          bgColor={'#BDFCC3'}
-          href={'project-name3'}
-        />
+
+        {projectsData.map((project) => (
+          <ProjectItem
+            imageSrc={project.imageSrc}
+            name={project.name}
+            description={project.description}
+            bgColor={'#E6D9EA'}
+          />
+        ))}
       </div>
     </>
   );

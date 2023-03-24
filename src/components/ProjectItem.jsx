@@ -6,14 +6,9 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+import { createHrefFromProjectName } from '../utils/common';
 
-export default function ProjectItem({
-  name,
-  description,
-  imageSrc,
-  bgColor,
-  href,
-}) {
+export default function ProjectItem({ name, description, imageSrc, bgColor }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const className = `grid grid-cols-1 sm:grid-cols-2 items-center content-center justify-items-center 
@@ -22,6 +17,10 @@ export default function ProjectItem({
   const styles = {
     backgroundImage: `linear-gradient(to bottom, ${bgColor},${bgColor}, white)`,
   };
+
+  // TODO: Perhaps create a bgColorArr and create the styles in the parent component
+
+  const href = createHrefFromProjectName(name);
 
   return (
     <Link to={`/work/${href}`}>
