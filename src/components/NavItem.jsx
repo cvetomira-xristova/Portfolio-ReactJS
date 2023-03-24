@@ -12,9 +12,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import Tooltip from '@mui/material/Tooltip';
 
-export default function NavItem({ href, title, download, icon }) {
+export default function NavItem({ href, title, download, classes = '' }) {
+  const className = `pl-4 text-black ${classes}`;
+
   return (
-    <div className='pl-4 text-black'>
+    <div className={className}>
       {download && (
         <Tooltip title='Clicking will triger a file download. Please make sure your permissions are on.'>
           <a href={href} download='CV - Tsvetomira Hristova.pdf'>

@@ -16,13 +16,16 @@ export default function ProjectItem({
 }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  console.log(bgColor);
-  const className = `h-80 grid grid-cols-1 sm:grid-cols-2 items-center content-center justify-items-center mb-8
-   bg-gradient-to-r from-${bgColor}-500 hover:scale-[98%] duration-500`;
+  const className = `grid grid-cols-1 sm:grid-cols-2 items-center content-center justify-items-center 
+  h-80 mb-8 hover:scale-[98%] duration-500`;
+
+  const styles = {
+    backgroundImage: `linear-gradient(to bottom, ${bgColor},${bgColor}, white)`,
+  };
 
   return (
     <Link to={`/work/${href}`}>
-      <div className={className}>
+      <div className={className} style={styles}>
         <div className='order-2 sm:order-1'>
           <img src={imageSrc} alt='Project Image' className='h-36 sm:h-56' />
         </div>

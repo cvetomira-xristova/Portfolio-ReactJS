@@ -1,8 +1,7 @@
-import { Button, Container, Typography, Link } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 import { scrollToSection } from '../utils/common';
 import ProjectItem from '../components/ProjectItem';
-import { useTheme } from '@mui/material/styles';
 
 import imageSrc1 from '../static/project1-img.png';
 import imageSrc2 from '../static/project2-img2.png';
@@ -44,21 +43,21 @@ export default function LandingPage() {
           imageSrc={imageSrc1}
           name={'Project Name'}
           description={'This is a short decription of the project hihi'}
-          bgColor={'indigo'}
+          bgColor={'#E6D9EA'}
           href={'project-name'}
         />
         <ProjectItem
           imageSrc={imageSrc2}
           name={'Project Name'}
           description={'This is a short decription of the project hihi'}
-          bgColor={'blue'}
+          bgColor={'#FFCBC0'}
           href={'project-name2'}
         />
         <ProjectItem
           imageSrc={imageSrc3}
           name={'Project Name'}
           description={'This is a short decription of the project hihi'}
-          bgColor={'indigo'}
+          bgColor={'#BDFCC3'}
           href={'project-name3'}
         />
       </div>

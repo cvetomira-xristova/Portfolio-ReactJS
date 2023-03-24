@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavItem from './NavItem';
 import resume from '../static/Tsvetomira-Hristova-CV.pdf';
+import InitialsNavItem from './InitialsNavItem';
 
 const links = [
   { key: 'home', title: 'Home', href: '/' },
@@ -17,20 +18,6 @@ const links = [
   },
 ];
 
-const initials = () => {
-  const style = {
-    fontFamily: 'REMEEQtrial, sans-serif',
-    fontSize: '30px',
-    letterSpacing: '1px',
-  };
-
-  return (
-    <p style={style} className='text-gray-800'>
-      T. H.
-    </p>
-  );
-};
-
 export default function Navigation() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -41,14 +28,13 @@ export default function Navigation() {
       <Toolbar className='bg-white shadow-none flex justify-between'>
         {isMobile && (
           <>
-            {initials()}
+            <InitialsNavItem />
             <IconButton
               size='large'
               edge='start'
-              color='black'
               onClick={() => setIsMobileNavOpen(true)}
             >
-              <MenuIcon />
+              <MenuIcon className='text-black' />
             </IconButton>
 
             <Drawer
@@ -62,7 +48,7 @@ export default function Navigation() {
                   href={link.href}
                   title={link.title}
                   download={link.key === 'resume' && true}
-                  icon={link.icon}
+                  classes={'my-4 text-center'}
                 />
               ))}
             </Drawer>
@@ -71,7 +57,7 @@ export default function Navigation() {
 
         {!isMobile && (
           <>
-            {initials()}
+            <InitialsNavItem />
             <div className='flex'>
               {links.map((link) => (
                 <NavItem
@@ -79,7 +65,7 @@ export default function Navigation() {
                   href={link.href}
                   title={link.title}
                   download={link.key === 'resume' && true}
-                  icon={link.icon}
+                  className={'my-4'}
                 />
               ))}
             </div>
