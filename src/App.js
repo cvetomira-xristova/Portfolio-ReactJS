@@ -9,7 +9,7 @@ import theme from './theme/theme';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Container fixed>
+      <Container maxWidth={'md'}>
         <Navigation />
         <Router />
         <Footer />

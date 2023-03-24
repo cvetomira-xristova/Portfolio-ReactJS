@@ -5,8 +5,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavItem from './NavItem';
 import resume from '../static/Tsvetomira-Hristova-CV.pdf';
-import DownloadIcon from '@mui/icons-material/Download';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 
 const links = [
   { key: 'home', title: 'Home', href: '/' },
@@ -16,7 +14,6 @@ const links = [
     key: 'resume',
     title: 'Resume',
     href: resume,
-    icon: <FileDownloadOutlinedIcon fontSize='small' />,
   },
 ];
 
@@ -41,7 +38,7 @@ export default function Navigation() {
 
   return (
     <AppBar position='sticky' elevation={0}>
-      <Toolbar className='bg-neutral-300 shadow-none flex justify-between'>
+      <Toolbar className='bg-white shadow-none flex justify-between'>
         {isMobile && (
           <>
             {initials()}

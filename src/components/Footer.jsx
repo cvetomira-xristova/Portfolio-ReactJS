@@ -16,7 +16,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <div className='bg-gray-200 flex flex-col items-center'>
+    <div className='bg-gray-100 flex flex-col items-center'>
       <Typography variant='h5' className='pt-8' align='center'>
         Let's connect
       </Typography>
