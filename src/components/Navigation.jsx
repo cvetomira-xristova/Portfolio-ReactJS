@@ -3,16 +3,35 @@ import { AppBar, Link, Toolbar, useMediaQuery, Drawer } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import NavItem from './NavItem';
+import resume from '../static/Tsvetomira-Hristova-CV.pdf';
+import DownloadIcon from '@mui/icons-material/Download';
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 
 const links = [
-  { name: 'Home', href: '/' },
-  { name: 'About Me', href: '/about-me' },
-  { name: 'Work', href: '/work' },
-  { name: 'Resume', href: '/resume' }, // TODO: Make downloadable
+  { key: 'home', title: 'Home', href: '/' },
+  { key: 'about-me', title: 'About Me', href: '/about-me' },
+  { key: 'work', title: 'Work', href: '/work' },
+  {
+    key: 'resume',
+    title: 'Resume',
+    href: resume,
+    icon: <FileDownloadOutlinedIcon fontSize='small' />,
+  },
 ];
 
 const initials = () => {
-  return <p className='text-gray-800'>Tsveti H.</p>;
+  const style = {
+    fontFamily: 'REMEEQtrial, sans-serif',
+    fontSize: '30px',
+    letterSpacing: '1px',
+  };
+
+  return (
+    <p style={style} className='text-gray-800'>
+      T. H.
+    </p>
+  );
 };
 
 export default function Navigation() {
@@ -22,7 +41,7 @@ export default function Navigation() {
 
   return (
     <AppBar position='sticky' elevation={0}>
-      <Toolbar className='bg-gray-500 shadow-none flex justify-between'>
+      <Toolbar className='bg-neutral-300 shadow-none flex justify-between'>
         {isMobile && (
           <>
             {initials()}
@@ -41,9 +60,13 @@ export default function Navigation() {
               anchor='top'
             >
               {links.map((link) => (
-                <Link href='#' color='primary' key={link.name}>
-                  {link.name}
-                </Link>
+                <NavItem
+                  key={link.key}
+                  href={link.href}
+                  title={link.title}
+                  download={link.key === 'resume' && true}
+                  icon={link.icon}
+                />
               ))}
             </Drawer>
           </>
@@ -54,14 +77,13 @@ export default function Navigation() {
             {initials()}
             <div className='flex'>
               {links.map((link) => (
-                <Link
+                <NavItem
+                  key={link.key}
                   href={link.href}
-                  color='primary'
-                  className='pr-8'
-                  key={link.name}
-                >
-                  {link.name}
-                </Link>
+                  title={link.title}
+                  download={link.key === 'resume' && true}
+                  icon={link.icon}
+                />
               ))}
             </div>
           </>

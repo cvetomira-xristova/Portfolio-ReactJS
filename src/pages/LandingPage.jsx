@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from '@mui/material';
+import { Button, Container, Typography, Link } from '@mui/material';
 import React from 'react';
 import { scrollToSection } from '../utils/common';
 
@@ -10,18 +10,15 @@ export default function LandingPage() {
           <Typography variant='h3'>Hi, I'm Tsvetomira</Typography>
         </div>
         <div>
-          <Typography variant='h6'>
-            lalalalalalalalalalalallalalalallala
-          </Typography>
+          <Typography variant='h6'>A product designer and developer</Typography>
         </div>
         <div>
-          <Button
-            variant='outlined'
-            className='h-10'
+          <Link
+            className='h-10 hover:cursor-pointer'
             onClick={() => scrollToSection('projects-section')}
           >
-            Check out my most recent work
-          </Button>
+            <Typography>Check out my most recent work</Typography>
+          </Link>
         </div>
       </div>
 

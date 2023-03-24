@@ -5,10 +5,13 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import StayCurrentPortraitIcon from '@mui/icons-material/StayCurrentPortrait';
 
+const lnLink = 'https://www.linkedin.com/in/tsvetomira-hristova-1b9759172/';
+const emailAddress = 'cvetomira.xristova@gmail.com';
+
 const socials = [
   { info: '+359 88 228 1240', icon: <StayCurrentPortraitIcon /> },
-  { info: 'cvetomira.xristova@gmail.com', icon: <EmailIcon /> },
-  { info: 'Tsvetomira Hristova', icon: <LinkedInIcon />, link: '' },
+  { info: emailAddress, icon: <EmailIcon />, link: `mailto:${emailAddress}` },
+  { info: 'Tsvetomira Hristova', icon: <LinkedInIcon />, link: lnLink },
 ];
 
 export default function Footer() {
@@ -23,10 +26,10 @@ export default function Footer() {
 
       <div className='py-8'>
         {socials.map((social) => (
-          <div className='flex align-middle pt-2'>
+          <a href={social.link} className='flex align-middle pt-2'>
             {social.icon}
             <Typography className='pl-4'>{social.info}</Typography>
-          </div>
+          </a>
         ))}
       </div>
     </div>
