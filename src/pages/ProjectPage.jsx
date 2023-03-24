@@ -13,7 +13,7 @@ export default function ProjectPage() {
   return (
     <div>
       <div className='h-screen bg-red-200 flex items-center justify-center'>
-        <img src={projectObj?.imageSrc} alt='' className='h-2/3' />
+        <img src={projectObj?.mainImageSrc} alt='' className='h-2/3' />
         {/* <Button>Next</Button> */}
       </div>
       <div className='h-screen bg-gray-200 py-24'>

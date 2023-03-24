@@ -40,7 +40,7 @@ export default function LandingPage() {
 
         {projectsData.map((project) => (
           <ProjectItem
-            imageSrc={project.imageSrc}
+            mainImageSrc={project.mainImageSrc}
             name={project.name}
             description={project.description}
             bgColor={'#E6D9EA'}

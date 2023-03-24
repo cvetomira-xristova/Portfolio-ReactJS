@@ -10,6 +10,7 @@ const theme = createTheme({
         tooltip: {
           fontSize: '12px',
           fontFamily: ['Arial', 'sans-serif'].join(','),
+          maxWidth: '180px',
         },
       },
     },
