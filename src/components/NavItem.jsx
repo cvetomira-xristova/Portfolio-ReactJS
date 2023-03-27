@@ -69,6 +69,7 @@ export default function NavItem({ href, title, classes = '', subItems }) {
               onClose={handleClose}
               MenuListProps={{ onMouseLeave: handleClose }}
               transitionDuration={300}
+              disableAutoFocusItem
             >
               {subItems.map((item) => (
                 <MenuItem onClick={handleClose} key={item.id}>
