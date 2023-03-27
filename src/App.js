@@ -9,7 +9,7 @@ import Header from './components/Header';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth={'md'}>
+      <Container maxWidth={'lg'}>
         <Header />
         <Router />
         <Footer />

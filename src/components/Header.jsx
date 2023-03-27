@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AppBar, Toolbar, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import resume from '../static/Tsvetomira-Hristova-CV.pdf';
+// import resume from '../static/Tsvetomira-Hristova-CV.pdf';
 import projectsData from '../api/db';
 import MobileNavigation from './MobileNavigation';
 import DesktopNavigation from './DesktopNavigation';
@@ -13,21 +13,20 @@ const navItems = [
     key: 'work',
     title: 'Work',
     href: '/work',
-    children: projectsData.map((project) => {
+    subItems: projectsData.map((project) => {
       return { name: project.name, id: project.id };
     }),
   },
-  {
-    key: 'resume',
-    title: 'Resume',
-    href: resume,
-  },
+  // {
+  //   key: 'resume', // TODO: Make this a btn in the about me section
+  //   title: 'Resume',
+  //   href: resume,
+  // },
 ];
 
 export default function Header() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
     <AppBar position='sticky' elevation={0}>

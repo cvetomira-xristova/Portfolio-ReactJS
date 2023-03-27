@@ -1,9 +1,5 @@
 import React from 'react';
-import { Button, Container, Typography } from '@mui/material';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import { Link } from 'react-router-dom';
+import { Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
 import { createHrefFromProjectName } from '../utils/common';
@@ -28,7 +24,7 @@ export default function ProjectItem({
   const href = createHrefFromProjectName(name);
 
   return (
-    <Link to={`/work/${href}`}>
+    <a href={`/work/${href}`}>
       <div className={className} style={styles}>
         <div className='order-2 sm:order-1'>
           <img
@@ -44,6 +40,6 @@ export default function ProjectItem({
           <Typography align='center'>{description}</Typography>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }

@@ -1,6 +1,14 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
+  // palette: {
+  //   primary: {
+  //     main: '',
+  //   },
+  //   secondary: {
+  //     main: '',
+  //   },
+  // },
   typography: {
     fontFamily: ['Serenata Vantages', 'sans-serif'].join(','),
   },

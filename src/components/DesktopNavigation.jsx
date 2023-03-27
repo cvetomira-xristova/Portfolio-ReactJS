@@ -13,7 +13,7 @@ export default function DesktopNavigation({ navItems }) {
             href={item.href}
             title={item.title}
             download={item.key === 'resume' && true}
-            children={item.children}
+            subItems={item.subItems}
           />
         ))}
       </div>
