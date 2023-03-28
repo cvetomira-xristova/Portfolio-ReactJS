@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Drawer } from '@mui/material';
+import { Drawer, Icon } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavItem from './NavItem';
 import InitialsNavItem from './InitialsNavItem';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function MobileNavigation({ navItems }) {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -24,6 +25,13 @@ export default function MobileNavigation({ navItems }) {
         onClose={() => setIsMobileNavOpen(false)}
         anchor='top'
       >
+        {/* TODO: Maybe Remove */}
+        {/* <IconButton
+          className='flex justify-end mr-4 mt-2'
+          onClick={() => setIsMobileNavOpen(false)}
+        >
+          <CloseIcon />
+        </IconButton> */}
         {navItems.map((item) => (
           <NavItem
             key={item.key}
