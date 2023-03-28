@@ -29,7 +29,6 @@ export default function MobileNavigation({ navItems }) {
             key={item.key}
             href={item.href}
             title={item.title}
-            classes={'my-4 mx-10'}
             subItems={item.subItems}
           />
         ))}

@@ -12,7 +12,6 @@ export default function DesktopNavigation({ navItems }) {
             key={item.key}
             href={item.href}
             title={item.title}
-            download={item.key === 'resume' && true}
             subItems={item.subItems}
           />
         ))}

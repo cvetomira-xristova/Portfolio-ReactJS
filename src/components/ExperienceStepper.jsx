@@ -45,15 +45,17 @@ export default function ExperienceStepper() {
         {steps.map((step) => (
           <Step key={step.occupation} expanded active last={false}>
             <StepLabel
-              StepIconComponent={() => <LocationOnOutlinedIcon />}
+              StepIconComponent={() => (
+                <LocationOnOutlinedIcon color='primary' />
+              )}
               optional={<Typography>{step.date}</Typography>}
             >
-              <Typography>
+              <Typography className='text-lg'>
                 <span>{step.occupation}</span>
                 {step.company && (
                   <>
                     {' at '}
-                    <span className='text-violet-600 font-extrabold'>
+                    <span className='text-primary font-bold'>
                       {step.company}
                     </span>
                   </>
@@ -61,7 +63,7 @@ export default function ExperienceStepper() {
               </Typography>
             </StepLabel>
             <StepContent>
-              <Typography variant={'subtitle1'}>{step.description}</Typography>
+              <Typography className='text-base'>{step.description}</Typography>
             </StepContent>
           </Step>
         ))}

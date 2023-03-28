@@ -13,19 +13,16 @@ export default function ProjectItem({
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const className = `grid grid-cols-1 sm:grid-cols-2 items-center content-center justify-items-center 
-  h-80 mb-8 hover:scale-[98%] duration-500`;
-
-  const styles = {
-    backgroundImage: `linear-gradient(to bottom, ${bgColor},${bgColor}, white)`,
-  };
-
+  h-80 mb-8 hover:scale-[98%] duration-500 
+  bg-gradient-to-tl from-primary to-gray-light`;
+  // TODO: Fix gradients
   // TODO: Perhaps create a bgColorArr and create the styles in the parent component
 
   const href = createHrefFromProjectName(name);
 
   return (
     <a href={`/work/${href}`}>
-      <div className={className} style={styles}>
+      <div className={className}>
         <div className='order-2 sm:order-1'>
           <img
             src={mainImageSrc}
@@ -34,10 +31,15 @@ export default function ProjectItem({
           />
         </div>
         <div className='order-1 sm:order-2'>
-          <Typography align='center' variant={isMobile ? 'h5' : 'h3'}>
+          <Typography
+            className='text-3xl sm:text-4xl text-white'
+            align='center'
+          >
             {name}
           </Typography>
-          <Typography align='center'>{description}</Typography>
+          <Typography className='' align='center'>
+            {description}
+          </Typography>
         </div>
       </div>
     </a>

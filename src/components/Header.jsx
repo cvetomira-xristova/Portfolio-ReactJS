@@ -1,7 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-// import resume from '../static/Tsvetomira-Hristova-CV.pdf';
 import projectsData from '../api/db';
 import MobileNavigation from './MobileNavigation';
 import DesktopNavigation from './DesktopNavigation';
@@ -17,11 +16,6 @@ const navItems = [
       return { name: project.name, id: project.id };
     }),
   },
-  // {
-  //   key: 'resume', // TODO: Make this a btn in the about me section
-  //   title: 'Resume',
-  //   href: resume,
-  // },
 ];
 
 export default function Header() {
