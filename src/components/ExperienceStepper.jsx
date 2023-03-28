@@ -46,11 +46,9 @@ export default function ExperienceStepper() {
           <Step key={step.occupation} expanded active last={false}>
             <StepLabel
               StepIconComponent={() => <LocationOnOutlinedIcon />}
-              optional={
-                <Typography variant='subtitle2'>{step.date}</Typography>
-              }
+              optional={<Typography>{step.date}</Typography>}
             >
-              <Typography variant='subtitle1'>
+              <Typography>
                 <span>{step.occupation}</span>
                 {step.company && (
                   <>

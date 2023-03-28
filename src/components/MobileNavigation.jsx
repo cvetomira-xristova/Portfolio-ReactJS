@@ -4,7 +4,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavItem from './NavItem';
 import InitialsNavItem from './InitialsNavItem';
-import CloseIcon from '@mui/icons-material/Close';
 
 export default function MobileNavigation({ navItems }) {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -25,19 +24,11 @@ export default function MobileNavigation({ navItems }) {
         onClose={() => setIsMobileNavOpen(false)}
         anchor='top'
       >
-        {/* TODO: Maybe Remove */}
-        {/* <IconButton
-          className='flex justify-end mr-4 mt-2'
-          onClick={() => setIsMobileNavOpen(false)}
-        >
-          <CloseIcon />
-        </IconButton> */}
         {navItems.map((item) => (
           <NavItem
             key={item.key}
             href={item.href}
             title={item.title}
-            // download={item.key === 'resume' && true}
             classes={'my-4 mx-10'}
             subItems={item.subItems}
           />

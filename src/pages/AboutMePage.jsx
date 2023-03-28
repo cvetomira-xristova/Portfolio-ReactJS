@@ -8,19 +8,26 @@ import ExperienceStepper from '../components/ExperienceStepper';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import resume from '../static/Tsvetomira-Hristova-CV.pdf';
 
+//TODO: Maybe create a reusable section with title, subtitle, children
+
 export default function AboutMePage() {
   return (
-    <div className='bg-gray-0 grid gap-y-16 py-10 mx-6'>
-      <div>
-        <Typography variant={'h4'} className='underline'>
-          A little bit about myself
-        </Typography>
-      </div>
+    <div className='bg-white grid md:gap-y-16 gap-y-10 py-4 md:mx-6 mx-4'>
+      <div className='Section  grid grid-cols-1 md:grid-cols-3 items-start md:mt-5 gap-y-10  '>
+        <div className='col-span-1 md:col-span-3 order-1'>
+          <Typography className=' underline md:text-3xl text-2xl'>
+            A little bit about myself
+          </Typography>
+        </div>
+        <img
+          src={portrait}
+          className={
+            'col-span-2 md:col-span-1 h-72 lg:h-96 rounded-lg justify-self-center md:justify-self-start order-3 md:order-2'
+          }
+        />
+        {/* TODO: Come back to img  */}
 
-      <div className='grid grid-cols-3 items-start mt-5 '>
-        <img src={portrait} className={' col-span-2 sm:col-span-1 h-80 '} />
-
-        <div className='col-span-2 sm:col-span-2'>
+        <div className='col-span-2 md:col-span-2 order-2 md:order-3 grid gap-y-10'>
           <Typography variant={'h6'} className={''}>
             Hi! My name is Tsvetomira Hristova and I am a gym-goer 🏋️‍♀️, an avid
             concert enjoyer 🎸, a traveler✈️, a problem-solver✔️, and a human
@@ -28,10 +35,7 @@ export default function AboutMePage() {
             humans' experiences through good design.
           </Typography>
 
-          <Typography
-            variant={'h6'}
-            className={'pt-12 py-6 col-span-2 sm:col-span-2'}
-          >
+          <Typography variant={'h6'} className={''}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -42,17 +46,17 @@ export default function AboutMePage() {
         </div>
       </div>
 
-      <div className='grid grid-cols-2'>
+      <div className='Section grid grid-cols-1 md:grid-cols-2 gap-y-10'>
         <div className=''>
-          <Typography variant={'h4'} className={' underline'}>
+          <Typography className={'underline md:text-3xl text-2xl'}>
             Toolbelt
           </Typography>
-          <Typography variant={'subtitle1'} className={''}>
+          <Typography className='text-md'>
             Some of the most common tools I use in my work include:
           </Typography>
         </div>
 
-        <div className='grid grid-cols-4 gap-y-8'>
+        <div className='grid grid-cols-4 gap-y-10'>
           {icons.map((icon) => (
             <ToolsListItem
               name={icon.name}
@@ -64,17 +68,21 @@ export default function AboutMePage() {
         </div>
       </div>
 
-      <div className='grid grid-cols-2'>
-        <Typography variant={'h4'} className={'underline'}>
+      <div className='Section grid grid-cols-1 md:grid-cols-2 gap-y-10'>
+        <Typography className={'underline md:text-3xl text-2xl'}>
           Experience
         </Typography>
 
         <ExperienceStepper />
       </div>
 
-      <div className={'flex justify-center'}>
+      <div className={'Section flex justify-center'}>
         <a href={resume} download='CV - Tsvetomira Hristova.pdf'>
-          <Button variant='contained' endIcon={<FileDownloadOutlinedIcon />}>
+          <Button
+            color='secondary'
+            variant='contained'
+            endIcon={<FileDownloadOutlinedIcon />}
+          >
             Download CV
           </Button>
         </a>
